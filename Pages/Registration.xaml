@@ -1,0 +1,66 @@
+﻿<Page x:Class="AppMusicBase.Pages.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppMusicBase.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="Регистрация">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" Grid.RowSpan="1">
+            <TextBlock Text="Логин"></TextBlock>
+            <TextBox x:Name="TBLoginPage" HorizontalAlignment="Right"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="2" Grid.RowSpan="1">
+            <TextBlock Text="Пароль"></TextBlock>
+            <TextBox x:Name="TBPasswordPage" HorizontalAlignment="Right"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="3" Grid.RowSpan="1">
+            <TextBlock Text="Имя"></TextBlock>
+            <TextBox x:Name="TBNamePage" HorizontalAlignment="Right"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="4" Grid.RowSpan="1">
+            <TextBlock Text="Фамилия"></TextBlock>
+            <TextBox x:Name="TBFamiliaPage" HorizontalAlignment="Right"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="5" Grid.RowSpan="1">
+            <TextBlock Text="Отчество"></TextBlock>
+            <TextBox x:Name="TBPatronymicPage" HorizontalAlignment="Right"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="6" Grid.RowSpan="1">
+            <TextBlock Text="Роль"></TextBlock>
+            <TextBox x:Name="TBRolePage" HorizontalAlignment="Right"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="8">
+            <Button x:Name="RegButtonPage" Content="Зарегистрироваться" Style="{StaticResource ButtonEnter}" Click="RegButtonPage_Click"></Button>
+            <Button x:Name="RegButtonBack" Content="Назад" Style="{StaticResource ButtonAdd}" Click="RegButtonBack_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

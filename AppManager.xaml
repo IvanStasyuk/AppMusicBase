@@ -1,0 +1,47 @@
+﻿<Window x:Class="AppMusicBase.AppManager" Icon="Resources/studio.png"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppMusicBase"
+        mc:Ignorable="d"
+        Title="Студия звукозаписи MusicBase" Height="720" Width="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="pack://application:,,,/Resources/studio.png"></Image>
+        </StackPanel>
+        <TextBlock Text="Студия звукозаписи MusicBase" Grid.Column="1" Grid.ColumnSpan="3"></TextBlock>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.ColumnSpan="3">
+            <TextBlock Text="+7 984 895 68 25"></TextBlock>
+            <TextBlock Text="+7 984 294 55 76" Margin="5"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="8" Grid.ColumnSpan="3">
+            <Button x:Name="OProgramm" Content="О программе" Click="OProgramm_Click" Style="{StaticResource ButtonAdd}"></Button>
+            <Button x:Name="AddOrder" Content="Сделать заказ" Click="AddOrder_Click" Style="{StaticResource ButtonEnter}" Margin="5"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
