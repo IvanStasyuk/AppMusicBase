@@ -26,10 +26,36 @@ namespace AppMusicBase
 
         private void OProgramm_Click(object sender, RoutedEventArgs e)
         {
-
+            ProgrammInfo window1 = new ProgrammInfo();
+            window1.Show();
         }
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PeopleboxButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PeoplefileopenButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PeoplefilesaveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PeoplefileexportButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PeoplefilesettingsButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

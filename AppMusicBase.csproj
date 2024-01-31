@@ -79,11 +79,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ProgrammInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.cs" />
     <Compile Include="Pages\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgrammInfo.xaml.cs">
+      <DependentUpon>ProgrammInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -112,6 +119,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\studio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\peoplebox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\peoplefileopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\peoplefilesave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\peoplefileexport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\peoplefilesettings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

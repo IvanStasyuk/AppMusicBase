@@ -34,27 +34,27 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" Grid.RowSpan="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="1" Grid.RowSpan="1">
             <TextBlock Text="Логин"></TextBlock>
             <TextBox x:Name="TBLoginPage" HorizontalAlignment="Right"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="2" Grid.RowSpan="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="2" Grid.RowSpan="1">
             <TextBlock Text="Пароль"></TextBlock>
             <TextBox x:Name="TBPasswordPage" HorizontalAlignment="Right"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="3" Grid.RowSpan="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="3" Grid.RowSpan="1">
             <TextBlock Text="Имя"></TextBlock>
             <TextBox x:Name="TBNamePage" HorizontalAlignment="Right"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="4" Grid.RowSpan="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="4" Grid.RowSpan="1">
             <TextBlock Text="Фамилия"></TextBlock>
             <TextBox x:Name="TBFamiliaPage" HorizontalAlignment="Right"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="5" Grid.RowSpan="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="5" Grid.RowSpan="1">
             <TextBlock Text="Отчество"></TextBlock>
             <TextBox x:Name="TBPatronymicPage" HorizontalAlignment="Right"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="6" Grid.RowSpan="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="6" Grid.RowSpan="1">
             <TextBlock Text="Роль"></TextBlock>
             <TextBox x:Name="TBRolePage" HorizontalAlignment="Right"></TextBox>
         </StackPanel>

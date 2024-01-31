@@ -43,5 +43,22 @@
             <Button x:Name="OProgramm" Content="О программе" Click="OProgramm_Click" Style="{StaticResource ButtonAdd}"></Button>
             <Button x:Name="AddOrder" Content="Сделать заказ" Click="AddOrder_Click" Style="{StaticResource ButtonEnter}" Margin="5"></Button>
         </StackPanel>
+        <StackPanel Background="Cornsilk" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="5" Margin="10">
+            <Button x:Name="PeopleboxButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="50,0,0,0" Click="PeopleboxButton_Click">
+                <Image Source="/Resources/peoplebox.png"></Image>
+            </Button>
+            <Button x:Name="PeoplefileopenButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefileopenButton_Click">
+                <Image Source="/Resources/peoplefileopen.png"></Image>
+            </Button>
+            <Button x:Name="PeoplefilesaveButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefilesaveButton_Click">
+                <Image Source="/Resources/peoplefilesave.png"></Image>
+            </Button>
+            <Button x:Name="PeoplefileexportButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefileexportButton_Click">
+                <Image Source="/Resources/peoplefileexport.png"></Image>
+            </Button>
+            <Button x:Name="PeoplefilesettingsButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefilesettingsButton_Click">
+                <Image Source="/Resources/peoplefilesettings.png"></Image>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

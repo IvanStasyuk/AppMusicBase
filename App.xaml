@@ -10,7 +10,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="FontFamily" Value="Comic Sans MC"></Setter>
+            <Setter Property="FontFamily" Value="Arial Black"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Height" Value="20"></Setter>
@@ -18,7 +18,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
-            <Setter Property="FontFamily" Value="Comic Sans MC"></Setter>
+            <Setter Property="FontFamily" Value="Arial Black"></Setter>
             <Setter Property="BorderThickness" Value="2"></Setter>
         </Style>
         <Style TargetType="Button">
@@ -27,6 +27,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="Background" Value="LightGray"></Setter>
+            <Setter Property="FontFamily" Value="Arial Black"></Setter>
         </Style>
         <Style TargetType="Button" x:Key="ButtonAdd">
             <Setter Property="Height" Value="auto"></Setter>
@@ -34,6 +35,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="Background" Value="LightGoldenrodYellow"></Setter>
+            <Setter Property="FontFamily" Value="Arial Black"></Setter>
         </Style>
         <Style TargetType="Button" x:Key="ButtonDel">
             <Setter Property="Height" Value="auto"></Setter>
@@ -41,6 +43,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="Background" Value="Red"></Setter>
+            <Setter Property="FontFamily" Value="Arial Black"></Setter>
         </Style>
         <Style TargetType="Button" x:Key="ButtonEnter">
             <Setter Property="Height" Value="auto"></Setter>
@@ -48,6 +51,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="Background" Value="LightGreen"></Setter>
+            <Setter Property="FontFamily" Value="Arial Black"></Setter>
         </Style>
         <Style TargetType="Calendar">
             <Setter Property="Height" Value="auto"></Setter>
