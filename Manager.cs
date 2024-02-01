@@ -10,5 +10,7 @@ namespace AppMusicBase
     internal class Manager
     {
         static public Frame MFrame;
+
+        public static Users _currentUser;
     }
 }

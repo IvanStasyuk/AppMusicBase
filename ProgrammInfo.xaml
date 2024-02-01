@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppMusicBase"
         mc:Ignorable="d"
-        Title="Информация" Height="500" Width="200">
+        Title="Информация" Height="500" Width="250">
     <Grid Background="Aquamarine">
-        <TextBox Text="Приложение было создано под руководством Лозовской Оксаны Анатольевны и Тихонова Егора Олеговича. Создан студентом Стасюк Иваном Сергеевичем." TextWrapping="WrapWithOverflow" TextAlignment="Justify" Height="433"></TextBox>
+        <TextBox Text="Студент 402гр-ИСП Стасюк Иван Сергеевич. Все права защищены." TextWrapping="WrapWithOverflow" TextAlignment="Justify" Height="433"></TextBox>
     </Grid>
 </Window>

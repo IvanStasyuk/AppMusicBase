@@ -58,9 +58,9 @@
             <TextBlock Text="Роль"></TextBlock>
             <TextBox x:Name="TBRolePage" HorizontalAlignment="Right"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="8">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="9" Grid.Row="8">
             <Button x:Name="RegButtonPage" Content="Зарегистрироваться" Style="{StaticResource ButtonEnter}" Click="RegButtonPage_Click"></Button>
-            <Button x:Name="RegButtonBack" Content="Назад" Style="{StaticResource ButtonAdd}" Click="RegButtonBack_Click"></Button>
+            <Button x:Name="RegButtonBack" Content="Закрыть" Style="{StaticResource ButtonAdd}" Click="RegButtonBack_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>
