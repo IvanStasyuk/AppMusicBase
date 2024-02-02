@@ -77,7 +77,11 @@ namespace AppMusicBase
 
         private void PeoplefilesettingsButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("Вы уверены что хотите перейти в настройки приложения?", "Подтвердите", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Manager.QFrame.Navigate(new Pages.Settings());
+            }
         }
 
         private void JanrsButton_Click(object sender, RoutedEventArgs e)
