@@ -78,7 +78,7 @@
             <PropertyRef Name="NameTirage" />
           </Key>
           <Property Name="NameTirage" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="CountAlboms" Type="nvarchar(max)" />
+          <Property Name="CountAlboms" Type="int" />
           <Property Name="TimeStart" Type="date" />
           <Property Name="TimeEnd" Type="date" />
           <Property Name="Profit" Type="nchar" MaxLength="10" />
@@ -87,7 +87,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="NameUser" Type="nvarchar" MaxLength="100" />
           <Property Name="FamiliaUser" Type="nvarchar" MaxLength="100" />
           <Property Name="PatronymicUser" Type="nvarchar" MaxLength="100" />
@@ -206,170 +206,39 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MusicStudioBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Alboms">
-          <Key>
-            <PropertyRef Name="idAlbom" />
-          </Key>
-          <Property Name="idAlbom" Type="Int32" Nullable="false" />
-          <Property Name="NameAlbom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CountCompositions" Type="Int32" />
-          <Property Name="Janr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="YearRelease" Type="DateTime" Precision="0" />
-          <Property Name="idSinger" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Singers" Relationship="Self.FK_Alboms_Singers" FromRole="Alboms" ToRole="Singers" />
-        </EntityType>
-        <EntityType Name="Instruments">
-          <Key>
-            <PropertyRef Name="MusicInstrument" />
-          </Key>
-          <Property Name="MusicInstrument" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="CountOnSklad" Type="Int32" />
-          <NavigationProperty Name="Singers" Relationship="Self.FK_Singers_Таблица1" FromRole="Instruments" ToRole="Singers" />
-        </EntityType>
-        <EntityType Name="MusicStudios">
-          <Key>
-            <PropertyRef Name="NameStudio" />
-          </Key>
-          <Property Name="NameStudio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="NameAdministrator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NameAccountant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Producers" Relationship="Self.FK_Producers_MusicStudios1" FromRole="MusicStudios" ToRole="Producers" />
-        </EntityType>
-        <EntityType Name="Producers">
-          <Key>
-            <PropertyRef Name="idProducer" />
-          </Key>
-          <Property Name="idProducer" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="NameProducer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FamiliaProducer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PatronymicProducer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="YearBirthday" Type="DateTime" Precision="0" />
-          <Property Name="NameStudio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="MusicStudios" Relationship="Self.FK_Producers_MusicStudios1" FromRole="Producers" ToRole="MusicStudios" />
-          <NavigationProperty Name="Singers" Relationship="Self.FK_Singers_Producers" FromRole="Producers" ToRole="Singers" />
-        </EntityType>
-        <EntityType Name="Singers">
-          <Key>
-            <PropertyRef Name="idSinger" />
-          </Key>
-          <Property Name="idSinger" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="NameSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FamiliaSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PatronymicSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MusicIntrument" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="YearBirthday" Type="DateTime" Precision="0" />
-          <Property Name="idProducer" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="NameTirage" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Alboms" Relationship="Self.FK_Alboms_Singers" FromRole="Singers" ToRole="Alboms" />
-          <NavigationProperty Name="Instruments" Relationship="Self.FK_Singers_Таблица1" FromRole="Singers" ToRole="Instruments" />
-          <NavigationProperty Name="Producers" Relationship="Self.FK_Singers_Producers" FromRole="Singers" ToRole="Producers" />
-          <NavigationProperty Name="Tirage" Relationship="Self.FK_Singers_Tirage" FromRole="Singers" ToRole="Tirage" />
-        </EntityType>
-        <EntityType Name="Tirage">
-          <Key>
-            <PropertyRef Name="NameTirage" />
-          </Key>
-          <Property Name="NameTirage" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="CountAlboms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TimeStart" Type="DateTime" Precision="0" />
-          <Property Name="TimeEnd" Type="DateTime" Precision="0" />
-          <Property Name="Profit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Singers" Relationship="Self.FK_Singers_Tirage" FromRole="Tirage" ToRole="Singers" />
-        </EntityType>
-        <Association Name="FK_Alboms_Singers">
-          <End Role="Singers" Type="Self.Singers" Multiplicity="0..1" />
-          <End Role="Alboms" Type="Self.Alboms" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Singers">
-              <PropertyRef Name="idSinger" />
-            </Principal>
-            <Dependent Role="Alboms">
-              <PropertyRef Name="idSinger" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Singers_Таблица1">
-          <End Role="Instruments" Type="Self.Instruments" Multiplicity="0..1" />
-          <End Role="Singers" Type="Self.Singers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Instruments">
-              <PropertyRef Name="MusicInstrument" />
-            </Principal>
-            <Dependent Role="Singers">
-              <PropertyRef Name="MusicIntrument" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Producers_MusicStudios1">
-          <End Role="MusicStudios" Type="Self.MusicStudios" Multiplicity="0..1" />
-          <End Role="Producers" Type="Self.Producers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MusicStudios">
-              <PropertyRef Name="NameStudio" />
-            </Principal>
-            <Dependent Role="Producers">
-              <PropertyRef Name="NameStudio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Singers_Producers">
-          <End Role="Producers" Type="Self.Producers" Multiplicity="0..1" />
-          <End Role="Singers" Type="Self.Singers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Producers">
-              <PropertyRef Name="idProducer" />
-            </Principal>
-            <Dependent Role="Singers">
-              <PropertyRef Name="idProducer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Singers_Tirage">
-          <End Role="Tirage" Type="Self.Tirage" Multiplicity="1" />
-          <End Role="Singers" Type="Self.Singers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tirage">
-              <PropertyRef Name="NameTirage" />
-            </Principal>
-            <Dependent Role="Singers">
-              <PropertyRef Name="NameTirage" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="MusicStudioBaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Alboms" EntityType="Self.Alboms" />
-          <EntitySet Name="Instruments" EntityType="Self.Instruments" />
-          <EntitySet Name="MusicStudios" EntityType="Self.MusicStudios" />
-          <EntitySet Name="Producers" EntityType="Self.Producers" />
-          <EntitySet Name="Singers" EntityType="Self.Singers" />
-          <EntitySet Name="Tirage" EntityType="Self.Tirage" />
-          <AssociationSet Name="FK_Alboms_Singers" Association="Self.FK_Alboms_Singers">
+          <EntitySet Name="sysdiagrams" EntityType="MusicStudioBaseModel.sysdiagrams" />
+          <EntitySet Name="Alboms" EntityType="MusicStudioBaseModel.Alboms" />
+          <EntitySet Name="Instruments" EntityType="MusicStudioBaseModel.Instruments" />
+          <EntitySet Name="MusicStudios" EntityType="MusicStudioBaseModel.MusicStudios" />
+          <EntitySet Name="Producers" EntityType="MusicStudioBaseModel.Producers" />
+          <EntitySet Name="Roles" EntityType="MusicStudioBaseModel.Roles" />
+          <EntitySet Name="Singers" EntityType="MusicStudioBaseModel.Singers" />
+          <EntitySet Name="Tirage" EntityType="MusicStudioBaseModel.Tirage" />
+          <EntitySet Name="Users" EntityType="MusicStudioBaseModel.Users" />
+          <AssociationSet Name="FK_Alboms_Singers" Association="MusicStudioBaseModel.FK_Alboms_Singers">
             <End Role="Singers" EntitySet="Singers" />
             <End Role="Alboms" EntitySet="Alboms" />
           </AssociationSet>
-          <AssociationSet Name="FK_Singers_Таблица1" Association="Self.FK_Singers_Таблица1">
+          <AssociationSet Name="FK_Singers_Таблица1" Association="MusicStudioBaseModel.FK_Singers_Таблица1">
             <End Role="Instruments" EntitySet="Instruments" />
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Producers_MusicStudios1" Association="Self.FK_Producers_MusicStudios1">
+          <AssociationSet Name="FK_Producers_MusicStudios1" Association="MusicStudioBaseModel.FK_Producers_MusicStudios1">
             <End Role="MusicStudios" EntitySet="MusicStudios" />
             <End Role="Producers" EntitySet="Producers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Singers_Producers" Association="Self.FK_Singers_Producers">
+          <AssociationSet Name="FK_Singers_Producers" Association="MusicStudioBaseModel.FK_Singers_Producers">
             <End Role="Producers" EntitySet="Producers" />
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Singers_Tirage" Association="Self.FK_Singers_Tirage">
-            <End Role="Tirage" EntitySet="Tirage" />
-            <End Role="Singers" EntitySet="Singers" />
-          </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="MusicStudioBaseModel.sysdiagrams" />
-          <EntitySet Name="Roles" EntityType="MusicStudioBaseModel.Roles" />
-          <EntitySet Name="Users" EntityType="MusicStudioBaseModel.Users" />
           <AssociationSet Name="FK_Users_Roles" Association="MusicStudioBaseModel.FK_Users_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Singers_Tirage" Association="MusicStudioBaseModel.FK_Singers_Tirage">
+            <End Role="Tirage" EntitySet="Tirage" />
+            <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
@@ -382,6 +251,49 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="Alboms">
+          <Key>
+            <PropertyRef Name="idAlbom" />
+          </Key>
+          <Property Name="idAlbom" Type="Int32" Nullable="false" />
+          <Property Name="NameAlbom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountCompositions" Type="Int32" />
+          <Property Name="Janr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YearRelease" Type="DateTime" Precision="0" />
+          <Property Name="idSinger" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Alboms_Singers" FromRole="Alboms" ToRole="Singers" />
+        </EntityType>
+        <EntityType Name="Instruments">
+          <Key>
+            <PropertyRef Name="MusicInstrument" />
+          </Key>
+          <Property Name="MusicInstrument" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CountOnSklad" Type="Int32" />
+          <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Таблица1" FromRole="Instruments" ToRole="Singers" />
+        </EntityType>
+        <EntityType Name="MusicStudios">
+          <Key>
+            <PropertyRef Name="NameStudio" />
+          </Key>
+          <Property Name="NameStudio" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="NameAdministrator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameAccountant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Producers" Relationship="MusicStudioBaseModel.FK_Producers_MusicStudios1" FromRole="MusicStudios" ToRole="Producers" />
+        </EntityType>
+        <EntityType Name="Producers">
+          <Key>
+            <PropertyRef Name="idProducer" />
+          </Key>
+          <Property Name="idProducer" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NameProducer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FamiliaProducer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PatronymicProducer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YearBirthday" Type="DateTime" Precision="0" />
+          <Property Name="NameStudio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="MusicStudios" Relationship="MusicStudioBaseModel.FK_Producers_MusicStudios1" FromRole="Producers" ToRole="MusicStudios" />
+          <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Producers" FromRole="Producers" ToRole="Singers" />
+        </EntityType>
         <EntityType Name="Roles">
           <Key>
             <PropertyRef Name="idRole" />
@@ -390,11 +302,39 @@
           <Property Name="NameRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Users" Relationship="MusicStudioBaseModel.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
         </EntityType>
+        <EntityType Name="Singers">
+          <Key>
+            <PropertyRef Name="idSinger" />
+          </Key>
+          <Property Name="idSinger" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NameSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FamiliaSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PatronymicSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MusicIntrument" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="YearBirthday" Type="DateTime" Precision="0" />
+          <Property Name="idProducer" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NameTirage" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Alboms" Relationship="MusicStudioBaseModel.FK_Alboms_Singers" FromRole="Singers" ToRole="Alboms" />
+          <NavigationProperty Name="Instruments" Relationship="MusicStudioBaseModel.FK_Singers_Таблица1" FromRole="Singers" ToRole="Instruments" />
+          <NavigationProperty Name="Producers" Relationship="MusicStudioBaseModel.FK_Singers_Producers" FromRole="Singers" ToRole="Producers" />
+          <NavigationProperty Name="Tirage" Relationship="MusicStudioBaseModel.FK_Singers_Tirage" FromRole="Singers" ToRole="Tirage" />
+        </EntityType>
+        <EntityType Name="Tirage">
+          <Key>
+            <PropertyRef Name="NameTirage" />
+          </Key>
+          <Property Name="NameTirage" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CountAlboms" Type="Int32" />
+          <Property Name="TimeStart" Type="DateTime" Precision="0" />
+          <Property Name="TimeEnd" Type="DateTime" Precision="0" />
+          <Property Name="Profit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Tirage" FromRole="Tirage" ToRole="Singers" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="NameUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="FamiliaUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PatronymicUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -403,6 +343,54 @@
           <Property Name="idRole" Type="Int32" />
           <NavigationProperty Name="Roles" Relationship="MusicStudioBaseModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
+        <Association Name="FK_Alboms_Singers">
+          <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="0..1" />
+          <End Type="MusicStudioBaseModel.Alboms" Role="Alboms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Singers">
+              <PropertyRef Name="idSinger" />
+            </Principal>
+            <Dependent Role="Alboms">
+              <PropertyRef Name="idSinger" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Singers_Таблица1">
+          <End Type="MusicStudioBaseModel.Instruments" Role="Instruments" Multiplicity="0..1" />
+          <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instruments">
+              <PropertyRef Name="MusicInstrument" />
+            </Principal>
+            <Dependent Role="Singers">
+              <PropertyRef Name="MusicIntrument" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producers_MusicStudios1">
+          <End Type="MusicStudioBaseModel.MusicStudios" Role="MusicStudios" Multiplicity="0..1" />
+          <End Type="MusicStudioBaseModel.Producers" Role="Producers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicStudios">
+              <PropertyRef Name="NameStudio" />
+            </Principal>
+            <Dependent Role="Producers">
+              <PropertyRef Name="NameStudio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Singers_Producers">
+          <End Type="MusicStudioBaseModel.Producers" Role="Producers" Multiplicity="0..1" />
+          <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producers">
+              <PropertyRef Name="idProducer" />
+            </Principal>
+            <Dependent Role="Singers">
+              <PropertyRef Name="idProducer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Users_Roles">
           <End Type="MusicStudioBaseModel.Roles" Role="Roles" Multiplicity="0..1" />
           <End Type="MusicStudioBaseModel.Users" Role="Users" Multiplicity="*" />
@@ -415,79 +403,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Singers_Tirage">
+          <End Type="MusicStudioBaseModel.Tirage" Role="Tirage" Multiplicity="1" />
+          <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tirage">
+              <PropertyRef Name="NameTirage" />
+            </Principal>
+            <Dependent Role="Singers">
+              <PropertyRef Name="NameTirage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище MusicStudioBaseModelContainer" CdmEntityContainer="MusicStudioBaseEntities">
-          <EntitySetMapping Name="Alboms">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Alboms">
-              <MappingFragment StoreEntitySet="Alboms">
-                <ScalarProperty Name="idAlbom" ColumnName="idAlbom" />
-                <ScalarProperty Name="NameAlbom" ColumnName="NameAlbom" />
-                <ScalarProperty Name="CountCompositions" ColumnName="CountCompositions" />
-                <ScalarProperty Name="Janr" ColumnName="Janr" />
-                <ScalarProperty Name="YearRelease" ColumnName="YearRelease" />
-                <ScalarProperty Name="idSinger" ColumnName="idSinger" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Instruments">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Instruments">
-              <MappingFragment StoreEntitySet="Instruments">
-                <ScalarProperty Name="MusicInstrument" ColumnName="MusicInstrument" />
-                <ScalarProperty Name="CountOnSklad" ColumnName="CountOnSklad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MusicStudios">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.MusicStudios">
-              <MappingFragment StoreEntitySet="MusicStudios">
-                <ScalarProperty Name="NameStudio" ColumnName="NameStudio" />
-                <ScalarProperty Name="NameAdministrator" ColumnName="NameAdministrator" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="NameAccountant" ColumnName="NameAccountant" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Producers">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Producers">
-              <MappingFragment StoreEntitySet="Producers">
-                <ScalarProperty Name="idProducer" ColumnName="idProducer" />
-                <ScalarProperty Name="NameProducer" ColumnName="NameProducer" />
-                <ScalarProperty Name="FamiliaProducer" ColumnName="FamiliaProducer" />
-                <ScalarProperty Name="PatronymicProducer" ColumnName="PatronymicProducer" />
-                <ScalarProperty Name="YearBirthday" ColumnName="YearBirthday" />
-                <ScalarProperty Name="NameStudio" ColumnName="NameStudio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Singers">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Singers">
-              <MappingFragment StoreEntitySet="Singers">
-                <ScalarProperty Name="idSinger" ColumnName="idSinger" />
-                <ScalarProperty Name="NameSinger" ColumnName="NameSinger" />
-                <ScalarProperty Name="FamiliaSinger" ColumnName="FamiliaSinger" />
-                <ScalarProperty Name="PatronymicSinger" ColumnName="PatronymicSinger" />
-                <ScalarProperty Name="MusicIntrument" ColumnName="MusicIntrument" />
-                <ScalarProperty Name="YearBirthday" ColumnName="YearBirthday" />
-                <ScalarProperty Name="idProducer" ColumnName="idProducer" />
-                <ScalarProperty Name="NameTirage" ColumnName="NameTirage" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tirage">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Tirage">
-              <MappingFragment StoreEntitySet="Tirage">
-                <ScalarProperty Name="NameTirage" ColumnName="NameTirage" />
-                <ScalarProperty Name="CountAlboms" ColumnName="CountAlboms" />
-                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
-                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
-                <ScalarProperty Name="Profit" ColumnName="Profit" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="MusicStudioBaseModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -499,11 +432,78 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Alboms">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Alboms">
+              <MappingFragment StoreEntitySet="Alboms">
+                <ScalarProperty Name="idSinger" ColumnName="idSinger" />
+                <ScalarProperty Name="YearRelease" ColumnName="YearRelease" />
+                <ScalarProperty Name="Janr" ColumnName="Janr" />
+                <ScalarProperty Name="CountCompositions" ColumnName="CountCompositions" />
+                <ScalarProperty Name="NameAlbom" ColumnName="NameAlbom" />
+                <ScalarProperty Name="idAlbom" ColumnName="idAlbom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instruments">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Instruments">
+              <MappingFragment StoreEntitySet="Instruments">
+                <ScalarProperty Name="CountOnSklad" ColumnName="CountOnSklad" />
+                <ScalarProperty Name="MusicInstrument" ColumnName="MusicInstrument" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MusicStudios">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.MusicStudios">
+              <MappingFragment StoreEntitySet="MusicStudios">
+                <ScalarProperty Name="NameAccountant" ColumnName="NameAccountant" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="NameAdministrator" ColumnName="NameAdministrator" />
+                <ScalarProperty Name="NameStudio" ColumnName="NameStudio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producers">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Producers">
+              <MappingFragment StoreEntitySet="Producers">
+                <ScalarProperty Name="NameStudio" ColumnName="NameStudio" />
+                <ScalarProperty Name="YearBirthday" ColumnName="YearBirthday" />
+                <ScalarProperty Name="PatronymicProducer" ColumnName="PatronymicProducer" />
+                <ScalarProperty Name="FamiliaProducer" ColumnName="FamiliaProducer" />
+                <ScalarProperty Name="NameProducer" ColumnName="NameProducer" />
+                <ScalarProperty Name="idProducer" ColumnName="idProducer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="MusicStudioBaseModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
                 <ScalarProperty Name="NameRole" ColumnName="NameRole" />
                 <ScalarProperty Name="idRole" ColumnName="idRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Singers">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Singers">
+              <MappingFragment StoreEntitySet="Singers">
+                <ScalarProperty Name="NameTirage" ColumnName="NameTirage" />
+                <ScalarProperty Name="idProducer" ColumnName="idProducer" />
+                <ScalarProperty Name="YearBirthday" ColumnName="YearBirthday" />
+                <ScalarProperty Name="MusicIntrument" ColumnName="MusicIntrument" />
+                <ScalarProperty Name="PatronymicSinger" ColumnName="PatronymicSinger" />
+                <ScalarProperty Name="FamiliaSinger" ColumnName="FamiliaSinger" />
+                <ScalarProperty Name="NameSinger" ColumnName="NameSinger" />
+                <ScalarProperty Name="idSinger" ColumnName="idSinger" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tirage">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Tirage">
+              <MappingFragment StoreEntitySet="Tirage">
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+                <ScalarProperty Name="CountAlboms" ColumnName="CountAlboms" />
+                <ScalarProperty Name="NameTirage" ColumnName="NameTirage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

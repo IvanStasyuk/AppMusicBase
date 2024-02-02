@@ -21,7 +21,7 @@ namespace AppMusicBase
         }
     
         public string NameTirage { get; set; }
-        public string CountAlboms { get; set; }
+        public Nullable<int> CountAlboms { get; set; }
         public Nullable<System.DateTime> TimeStart { get; set; }
         public Nullable<System.DateTime> TimeEnd { get; set; }
         public string Profit { get; set; }

@@ -84,8 +84,7 @@ namespace AppMusicBase
         private void RegButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.MFrame.Navigate(new Pages.Registration());
-            Manager.MFrame.Visibility = Visibility.Visible;
-            RegButton.IsEnabled = false; 
+            Manager.MFrame.Visibility = Visibility.Visible; 
         }
 
         private void GhostButton_Click(object sender, RoutedEventArgs e)

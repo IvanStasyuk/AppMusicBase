@@ -11,6 +11,8 @@ namespace AppMusicBase
     {
         static public Frame MFrame;
 
+        static public Frame QFrame;
+
         public static Users _currentUser;
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AppMusicBase"
         mc:Ignorable="d"
         Title="Студия звукозаписи MusicBase" Height="720" Width="1280">
-    <Grid>
+    <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -60,5 +60,15 @@
                 <Image Source="/Resources/peoplefilesettings.png"></Image>
             </Button>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="10,10,64,10" Grid.Row="2" Background="Cornsilk">
+            <Button x:Name="JanrsButton" Content="Жанры" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="110,5,50,5" Click="JanrsButton_Click"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="64,10,10,10" Grid.Row="2" Background="Cornsilk" Grid.Column="2">
+            <Button x:Name="EffectsButton" Content="Эффекты" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="100,5,50,5" Click="EffectsButton_Click"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="37,70,37,20" Grid.Row="2" Background="Cornsilk" Grid.Column="1" Grid.RowSpan="2">
+            <Button x:Name="InstrumentsButton" Content="Инструменты" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="80,5,50,5" Click="InstrumentsButton_Click"></Button>
+        </StackPanel>
+        <Frame x:Name="QFrame" NavigationUIVisibility="Hidden" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5"></Frame> 
     </Grid>
 </Window>

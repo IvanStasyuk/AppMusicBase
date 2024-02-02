@@ -14,7 +14,7 @@ namespace AppMusicBase
     
     public partial class Users
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public string NameUser { get; set; }
         public string FamiliaUser { get; set; }
         public string PatronymicUser { get; set; }
