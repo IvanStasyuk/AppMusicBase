@@ -79,6 +79,9 @@
     <Compile Include="MusicStudios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AudioDefitions.xaml.cs">
+      <DependentUpon>AudioDefitions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Effects.xaml.cs">
       <DependentUpon>Effects.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <DependentUpon>Autorisation.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AudioDefitions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Effects.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +240,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\audioDef.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

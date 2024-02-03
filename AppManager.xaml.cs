@@ -27,6 +27,8 @@ namespace AppMusicBase
         {
             InitializeComponent();
             Manager.QFrame = QFrame;
+            Manager.NFrame = NFrame;
+            Manager.NFrame.Navigate(new Pages.AudioDefitions());
         }
 
         private void OProgramm_Click(object sender, RoutedEventArgs e)

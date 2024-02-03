@@ -69,6 +69,7 @@
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="37,70,37,20" Grid.Row="2" Background="Cornsilk" Grid.Column="1" Grid.RowSpan="2">
             <Button x:Name="InstrumentsButton" Content="Инструменты" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="80,5,50,5" Click="InstrumentsButton_Click"></Button>
         </StackPanel>
-        <Frame x:Name="QFrame" NavigationUIVisibility="Hidden" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5"></Frame> 
+        <Frame x:Name="QFrame" NavigationUIVisibility="Hidden" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5"></Frame>
+        <Frame x:Name="NFrame" NavigationUIVisibility="Hidden" Grid.Column="5" Grid.RowSpan="9" Grid.ColumnSpan="5" Margin="64,68,64,3"/>
     </Grid>
 </Window>

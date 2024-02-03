@@ -13,6 +13,8 @@ namespace AppMusicBase
 
         static public Frame QFrame;
 
+        static public Frame NFrame;
+
         public static Users _currentUser;
     }
 }
