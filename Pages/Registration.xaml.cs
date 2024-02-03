@@ -27,6 +27,26 @@ namespace AppMusicBase.Pages
 
         private void RegButtonPage_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
+
+            if (string.IsNullOrEmpty(TBNamePage.Text))
+                errors.AppendLine("Укажите имя пользователя");
+            if (string.IsNullOrEmpty(TBFamiliaPage.Text))
+                errors.AppendLine("Укажите фамилию пользователя");
+            if (string.IsNullOrEmpty(TBPatronymicPage.Text))
+                errors.AppendLine("Укажите отчество пользователя");
+            if (string.IsNullOrEmpty(TBLoginPage.Text))
+                errors.AppendLine("Укажите логин пользователя");
+            if (string.IsNullOrEmpty(TBPasswordPage.Text))
+                errors.AppendLine("Укажите пароль пользователя");
+            if (string.IsNullOrEmpty(TBRolePage.Text))
+                errors.AppendLine("Укажите роль для пользователя");
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
             if (MusicStudioBaseEntities.GetContext().Users.Count(y => y.Login == TBLoginPage.Text) > 0)
             {
                 MessageBox.Show("Пользователь уже существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);

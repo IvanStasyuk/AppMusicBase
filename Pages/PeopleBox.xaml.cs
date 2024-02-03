@@ -23,11 +23,18 @@ namespace AppMusicBase.Pages
         public PeopleBox()
         {
             InitializeComponent();
+            var DataUser = MusicStudioBaseEntities.GetContext().Users.FirstOrDefault(x => x.NameUser == TBKnowName.Text && x.FamiliaUser == TBKnowFamilia.Text && x.PatronymicUser == TBKnowPatronymic.Text && x.Login == TBKnowLogin.Text && x.Password == TBKnowPassword.Text);
+            
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.NFrame.GoBack();
         }
     }
 }

@@ -40,34 +40,34 @@
             <TextBlock Text="+7 984 294 55 76" Margin="5"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="8" Grid.ColumnSpan="3">
-            <Button x:Name="OProgramm" Content="О программе" Click="OProgramm_Click" Style="{StaticResource ButtonAdd}"></Button>
-            <Button x:Name="AddOrder" Content="Сделать заказ" Click="AddOrder_Click" Style="{StaticResource ButtonEnter}" Margin="5"></Button>
+            <Button x:Name="OProgramm" Content="О программе" Click="OProgramm_Click" ToolTip="Прочитать лицензию" Style="{StaticResource ButtonAdd}"></Button>
+            <Button x:Name="AddOrder" Content="Сделать заказ" Click="AddOrder_Click" ToolTip="Заказ на запись" Style="{StaticResource ButtonEnter}" Margin="5"></Button>
         </StackPanel>
         <StackPanel Background="Cornsilk" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="5" Margin="10">
-            <Button x:Name="PeopleboxButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="50,0,0,0" Click="PeopleboxButton_Click">
+            <Button x:Name="PeopleboxButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="50,0,0,0" ToolTip="Учётная запись" Click="PeopleboxButton_Click">
                 <Image Source="/Resources/peoplebox.png"></Image>
             </Button>
-            <Button x:Name="PeoplefileopenButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefileopenButton_Click">
+            <Button x:Name="PeoplefileopenButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" ToolTip="Открыть файл" Click="PeoplefileopenButton_Click">
                 <Image Source="/Resources/peoplefileopen.png"></Image>
             </Button>
-            <Button x:Name="PeoplefilesaveButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefilesaveButton_Click">
+            <Button x:Name="PeoplefilesaveButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" ToolTip="Сохранить как" Click="PeoplefilesaveButton_Click">
                 <Image Source="/Resources/peoplefilesave.png"></Image>
             </Button>
-            <Button x:Name="PeoplefileexportButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefileexportButton_Click">
+            <Button x:Name="PeoplefileexportButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" ToolTip="Перейти на сайт" Click="PeoplefileexportButton_Click">
                 <Image Source="/Resources/peoplefileexport.png"></Image>
             </Button>
-            <Button x:Name="PeoplefilesettingsButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" Click="PeoplefilesettingsButton_Click">
+            <Button x:Name="PeoplefilesettingsButton" Height="48" Width="48" HorizontalAlignment="Left" Margin="70,0,0,0" ToolTip="Параметры" Click="PeoplefilesettingsButton_Click">
                 <Image Source="/Resources/peoplefilesettings.png"></Image>
             </Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="10,10,64,10" Grid.Row="2" Background="Cornsilk">
-            <Button x:Name="JanrsButton" Content="Жанры" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="110,5,50,5" Click="JanrsButton_Click"></Button>
+            <Button x:Name="JanrsButton" Content="Жанры" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="110,5,50,5" ToolTip="Просмотреть жанры" Click="JanrsButton_Click"></Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="64,10,10,10" Grid.Row="2" Background="Cornsilk" Grid.Column="2">
-            <Button x:Name="EffectsButton" Content="Эффекты" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="100,5,50,5" Click="EffectsButton_Click"></Button>
+            <Button x:Name="EffectsButton" Content="Эффекты" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="100,5,50,5" ToolTip="Просмотреть эффекты" Click="EffectsButton_Click"></Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="37,70,37,20" Grid.Row="2" Background="Cornsilk" Grid.Column="1" Grid.RowSpan="2">
-            <Button x:Name="InstrumentsButton" Content="Инструменты" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="80,5,50,5" Click="InstrumentsButton_Click"></Button>
+            <Button x:Name="InstrumentsButton" Content="Инструменты" Style="{StaticResource ButtonEnter}" HorizontalAlignment="Right" Margin="80,5,50,5" ToolTip="Просмотреть инструменты" Click="InstrumentsButton_Click"></Button>
         </StackPanel>
         <Frame x:Name="QFrame" NavigationUIVisibility="Hidden" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5"></Frame>
         <Frame x:Name="NFrame" NavigationUIVisibility="Hidden" Grid.Column="5" Grid.RowSpan="9" Grid.ColumnSpan="5" Margin="64,68,64,3"/>
