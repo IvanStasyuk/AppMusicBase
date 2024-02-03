@@ -20,14 +20,19 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3">
             <Image Source="/Resources/audioDef.jpg" Height="112.5" Width="800" Margin="10"></Image>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                
-            </StackPanel>
             <Image Source="/Resources/audioDef.jpg" Height="112.5" Width="800" Margin="15"></Image>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.Row="3" >
             <Image Source="/Resources/audioDef.jpg" Height="112.5" Width="800" Margin="15"></Image>
             <Image Source="/Resources/audioDef.jpg" Height="112.5" Width="800" Margin="10"></Image>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="1">
+            <Image Source="/Resources/unknownAlbom.png" Height="102" Width="800" Margin="10"></Image>
+            <Image Source="/Resources/unknownAlbom.png" Height="102" Width="800" Margin="15"></Image>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Row="3">
+            <Image Source="/Resources/unknownAlbom.png" Height="102" Width="800" Margin="15"></Image>
+            <Image Source="/Resources/unknownAlbom.png" Height="102" Width="800" Margin="10"></Image>
         </StackPanel>
     </Grid>
 </Page>

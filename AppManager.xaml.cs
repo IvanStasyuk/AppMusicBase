@@ -44,7 +44,14 @@ namespace AppMusicBase
 
         private void PeopleboxButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("Вы уверены что хотите зайти в свою учетную запись?", "Подтвердите", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                goto captcha;
+            }
+            captcha:;
+                CaptchaWindow window2 = new CaptchaWindow();
+                window2.Show();
         }
 
         private void PeoplefileopenButton_Click(object sender, RoutedEventArgs e)

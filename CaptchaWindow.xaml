@@ -1,0 +1,22 @@
+﻿<Window x:Class="AppMusicBase.CaptchaWindow" Icon="Resources/studio.png"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppMusicBase"
+        mc:Ignorable="d"
+        Title="Введите капчу" Height="180" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Капча: ABCD" Grid.ColumnSpan="2"></TextBlock>
+        <TextBox x:Name="captchaIn" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="50,57,0,0" VerticalAlignment="Top"></TextBox>
+        <Button x:Name="captchaInEnter" Content="Войти" Style="{StaticResource ButtonEnter}" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" Margin="114,0,0,0" Click="captchaInEnter_Click"/>
+    </Grid>
+</Window>

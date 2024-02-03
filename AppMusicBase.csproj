@@ -68,6 +68,9 @@
     <Compile Include="Alboms.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CaptchaWindow.xaml.cs">
+      <DependentUpon>CaptchaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Instruments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -90,6 +93,9 @@
     </Compile>
     <Compile Include="Pages\MusicInstruments.xaml.cs">
       <DependentUpon>MusicInstruments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PeopleBox.xaml.cs">
+      <DependentUpon>PeopleBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -131,6 +137,10 @@
       <DependentUpon>Autorisation.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="CaptchaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AudioDefitions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MusicInstruments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PeopleBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +254,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\peopleUser.png" />
+    <Resource Include="Resources\unknownAlbom.png" />
     <Resource Include="Resources\audioDef.jpg" />
   </ItemGroup>
   <ItemGroup>
