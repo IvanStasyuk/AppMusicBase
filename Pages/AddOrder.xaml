@@ -19,5 +19,46 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="1" Grid.RowSpan="1">
+                <TextBlock Text="Название заказа"></TextBlock>
+                <TextBox x:Name="TBNameOrderPage"  HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="2" Grid.RowSpan="1" Margin="15">
+                <TextBlock Text="Имя исполнителя"></TextBlock>
+                <TextBox x:Name="TBNameSingerPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="3" Grid.RowSpan="1" >
+                <TextBlock Text="Фамилия исполнителя"></TextBlock>
+                <TextBox x:Name="TBFamiliaSingerPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="4" Grid.RowSpan="1" Margin="15">
+                <TextBlock Text="Отчество исполнителя"></TextBlock>
+                <TextBox x:Name="TBPatronymicSingerPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="5" Grid.RowSpan="1">
+                <TextBlock Text="Инструмент"></TextBlock>
+                <TextBox x:Name="TBInstrumentPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="6" Grid.RowSpan="1" Margin="15">
+                <TextBlock Text="Цена"></TextBlock>
+                <TextBox x:Name="TBProfitPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="6" Grid.RowSpan="1">
+                <TextBlock Text="Количество композиций"></TextBlock>
+                <TextBox x:Name="TBCountCompositionsPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="6" Grid.RowSpan="1" Margin="15">
+                <TextBlock Text="Начало записи"></TextBlock>
+                <TextBox x:Name="TBStartOrderPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="6" Grid.RowSpan="1" >
+                <TextBlock Text="Конец записи"></TextBlock>
+                <TextBox x:Name="TBEndOrderPage" HorizontalAlignment="Right"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="BTSaveOrder" Content="Добавить" Style="{StaticResource ButtonEnter}" Grid.Column="1" Grid.Row="2" Margin="0,93,0,0" VerticalAlignment="Top" Click="BTSaveOrder_Click"></Button>
+        <Button x:Name="BTBackOrder" Content="Вернуться" Style="{StaticResource ButtonAdd}" Grid.Column="1" Margin="0,123,0,0" Grid.Row="2" VerticalAlignment="Top" Click="BTBackOrder_Click"></Button>
+        <Button x:Name="ListOrdersBT" Content="Список заказов" Style="{StaticResource ButtonAdd}" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="133,10,0,0" Grid.ColumnSpan="2" Click="ListOrdersBT_Click"></Button>
     </Grid>
 </Page>

@@ -21,6 +21,7 @@
         <AssociationConnector Association="MusicStudioBaseModel.FK_Users_Roles" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Tirage" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Orders" Width="1.5" PointX="7.375" PointY="9.75" />
+        <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Orders" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

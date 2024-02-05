@@ -77,6 +77,7 @@
           <Property Name="YearBirthday" Type="date" />
           <Property Name="idProducer" Type="nchar" MaxLength="10" />
           <Property Name="NameTirage" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="idOrder" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -134,6 +135,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Singers_Instruments">
+          <End Role="Instruments" Type="Self.Instruments" Multiplicity="0..1" />
+          <End Role="Singers" Type="Self.Singers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instruments">
+              <PropertyRef Name="MusicInstrument" />
+            </Principal>
+            <Dependent Role="Singers">
+              <PropertyRef Name="MusicIntrument" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Singers_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Singers" Type="Self.Singers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="idOrder" />
+            </Principal>
+            <Dependent Role="Singers">
+              <PropertyRef Name="idOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Singers_Producers">
           <End Role="Producers" Type="Self.Producers" Multiplicity="0..1" />
           <End Role="Singers" Type="Self.Singers" Multiplicity="*" />
@@ -155,18 +180,6 @@
             </Principal>
             <Dependent Role="Singers">
               <PropertyRef Name="NameTirage" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Singers_Таблица1">
-          <End Role="Instruments" Type="Self.Instruments" Multiplicity="0..1" />
-          <End Role="Singers" Type="Self.Singers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Instruments">
-              <PropertyRef Name="MusicInstrument" />
-            </Principal>
-            <Dependent Role="Singers">
-              <PropertyRef Name="MusicIntrument" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -201,16 +214,20 @@
             <End Role="MusicStudios" EntitySet="MusicStudios" />
             <End Role="Producers" EntitySet="Producers" />
           </AssociationSet>
+          <AssociationSet Name="FK_Singers_Instruments" Association="Self.FK_Singers_Instruments">
+            <End Role="Instruments" EntitySet="Instruments" />
+            <End Role="Singers" EntitySet="Singers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Singers_Orders" Association="Self.FK_Singers_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Singers" EntitySet="Singers" />
+          </AssociationSet>
           <AssociationSet Name="FK_Singers_Producers" Association="Self.FK_Singers_Producers">
             <End Role="Producers" EntitySet="Producers" />
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
           <AssociationSet Name="FK_Singers_Tirage" Association="Self.FK_Singers_Tirage">
             <End Role="Tirage" EntitySet="Tirage" />
-            <End Role="Singers" EntitySet="Singers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Singers_Таблица1" Association="Self.FK_Singers_Таблица1">
-            <End Role="Instruments" EntitySet="Instruments" />
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
@@ -257,6 +274,10 @@
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
           <EntitySet Name="Orders" EntityType="MusicStudioBaseModel.Orders" />
+          <AssociationSet Name="FK_Singers_Orders" Association="MusicStudioBaseModel.FK_Singers_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Singers" EntitySet="Singers" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -335,6 +356,8 @@
           <NavigationProperty Name="Instruments" Relationship="MusicStudioBaseModel.FK_Singers_Таблица1" FromRole="Singers" ToRole="Instruments" />
           <NavigationProperty Name="Producers" Relationship="MusicStudioBaseModel.FK_Singers_Producers" FromRole="Singers" ToRole="Producers" />
           <NavigationProperty Name="Tirage" Relationship="MusicStudioBaseModel.FK_Singers_Tirage" FromRole="Singers" ToRole="Tirage" />
+          <Property Name="idOrder" Type="Int32" />
+          <NavigationProperty Name="Orders" Relationship="MusicStudioBaseModel.FK_Singers_Orders" FromRole="Singers" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Tirage">
           <Key>
@@ -446,7 +469,20 @@
           <Property Name="CountCompositions" Type="Int32" />
           <Property Name="DateStart" Type="DateTime" Precision="0" />
           <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Orders" FromRole="Orders" ToRole="Singers" />
         </EntityType>
+        <Association Name="FK_Singers_Orders">
+          <End Type="MusicStudioBaseModel.Orders" Role="Orders" Multiplicity="0..1" />
+          <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="idOrder" />
+            </Principal>
+            <Dependent Role="Singers">
+              <PropertyRef Name="idOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -517,6 +553,7 @@
           <EntitySetMapping Name="Singers">
             <EntityTypeMapping TypeName="MusicStudioBaseModel.Singers">
               <MappingFragment StoreEntitySet="Singers">
+                <ScalarProperty Name="idOrder" ColumnName="idOrder" />
                 <ScalarProperty Name="NameTirage" ColumnName="NameTirage" />
                 <ScalarProperty Name="idProducer" ColumnName="idProducer" />
                 <ScalarProperty Name="YearBirthday" ColumnName="YearBirthday" />

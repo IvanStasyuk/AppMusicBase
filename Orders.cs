@@ -14,6 +14,12 @@ namespace AppMusicBase
     
     public partial class Orders
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Orders()
+        {
+            this.Singers = new HashSet<Singers>();
+        }
+    
         public int idOrder { get; set; }
         public string NameOrder { get; set; }
         public string NameSinger { get; set; }
@@ -24,5 +30,8 @@ namespace AppMusicBase
         public Nullable<int> CountCompositions { get; set; }
         public Nullable<System.DateTime> DateStart { get; set; }
         public Nullable<System.DateTime> DateEnd { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Singers> Singers { get; set; }
     }
 }

@@ -97,6 +97,9 @@
     <Compile Include="Pages\Elections.xaml.cs">
       <DependentUpon>Elections.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ListOrders.xaml.cs">
+      <DependentUpon>ListOrders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MusicInstruments.xaml.cs">
       <DependentUpon>MusicInstruments.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Elections.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ListOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
