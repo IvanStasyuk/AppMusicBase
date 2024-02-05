@@ -22,10 +22,8 @@ namespace AppMusicBase.Pages
     {
         public PeopleBox()
         {
-            DataContext = MusicStudioBaseEntities.GetContext().Users.ToList();
             InitializeComponent();
-            var DataUser = MusicStudioBaseEntities.GetContext().Users.FirstOrDefault(x => x.NameUser == TBKnowName.Text && x.FamiliaUser == TBKnowFamilia.Text && x.PatronymicUser == TBKnowPatronymic.Text && x.Login == TBKnowLogin.Text && x.Password == TBKnowPassword.Text);
-            
+            DataContext = MusicStudioBaseEntities.GetContext().Users.ToList();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +33,7 @@ namespace AppMusicBase.Pages
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            Manager.NFrame.GoBack();
+            Manager.NFrame.Navigate(new Pages.AudioDefitions());
         }
     }
 }
