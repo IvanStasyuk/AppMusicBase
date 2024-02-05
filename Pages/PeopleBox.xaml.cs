@@ -26,11 +26,6 @@ namespace AppMusicBase.Pages
             DataContext = MusicStudioBaseEntities.GetContext().Users.ToList();
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.NFrame.Navigate(new Pages.AudioDefitions());

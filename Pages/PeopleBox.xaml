@@ -44,7 +44,6 @@
                 <TextBlock x:Name="TBKnowPassword" Text="{Binding Password}"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="ExitButton" Content="Выйти из аккаунта" Style="{StaticResource ButtonAdd}" Grid.Row="2" Click="ExitButton_Click" Grid.ColumnSpan="3" Margin="0,55,0,0" VerticalAlignment="Top"/>
         <Button x:Name="BackButton" Content="Вернуться" Style="{StaticResource ButtonAdd}" Grid.Column="1" Grid.Row="2" Margin="0,93,0,0" VerticalAlignment="Top" Click="BackButton_Click"></Button>
     </Grid>
 </Page>
