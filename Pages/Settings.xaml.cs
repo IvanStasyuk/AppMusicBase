@@ -24,5 +24,17 @@ namespace AppMusicBase.Pages
         {
             InitializeComponent();
         }
+
+        private void SelectBackground_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem selectedItems = (ComboBoxItem)SelectBackground.SelectedItem;
+            string selectedColor = selectedItems.Content.ToString();
+            switch (selectedColor)
+            {
+                case "Красный":
+                    this.Background = Brushes.Red;
+                    break;
+            }
+        }
     }
 }

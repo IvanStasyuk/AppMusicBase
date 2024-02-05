@@ -49,6 +49,10 @@ namespace AppMusicBase
             {
                 goto captcha;
             }
+            else
+            {
+                return;
+            }
             captcha:;
                 CaptchaWindow window2 = new CaptchaWindow();
                 window2.Show();
@@ -82,6 +86,10 @@ namespace AppMusicBase
             {
                 Process.Start("https://audiomaster.su/");
             }
+            else
+            {
+                return;
+            }
         }
 
         private void PeoplefilesettingsButton_Click(object sender, RoutedEventArgs e)
@@ -90,6 +98,10 @@ namespace AppMusicBase
             if (result == MessageBoxResult.Yes)
             {
                 Manager.QFrame.Navigate(new Pages.Settings());
+            }
+            else
+            {
+                return;
             }
         }
 

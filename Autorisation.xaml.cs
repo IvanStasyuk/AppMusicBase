@@ -44,7 +44,6 @@ namespace AppMusicBase
                 else if (CaptchaInput.Text == "ABCD")
                 {
                     MessageBox.Show("Капча верна", "Авторизация успешна", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Manager._currentUser = UserVhod;
 
                     switch (UserVhod.idRole)
                     {

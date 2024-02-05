@@ -23,25 +23,10 @@
             <TextBlock Text="Параметры"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.RowSpan="3">
-            <TextBlock Text="Громкость"></TextBlock>
+            <TextBlock Text="Цвет фона"></TextBlock>
             <Separator></Separator>
-            <Slider Width="380"></Slider>
-            <Separator></Separator>
-            <TextBlock Text="Эффекты"></TextBlock>
-            <Separator></Separator>
-            <Slider Width="380"></Slider>
-            <Separator></Separator>
-            <TextBlock Text="Шум"></TextBlock>
-            <Separator></Separator>
-            <Slider Width="380"></Slider>
-            <Separator></Separator>
-            <TextBlock Text="Вертикальная синхронизация"></TextBlock>
-            <Separator></Separator>
-            <Slider Width="380"></Slider>
-            <Separator></Separator>
-            <TextBlock Text="DLSS"></TextBlock>
-            <Separator></Separator>
-            <Slider Width="380"></Slider>
+            <ComboBox x:Name="SelectBackground" SelectionChanged="SelectBackground_SelectionChanged" Width="380">Красный
+            </ComboBox>
             <Separator></Separator>
         </StackPanel>
     </Grid>
