@@ -82,6 +82,12 @@
     <Compile Include="MusicStudios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Orders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddOrder.xaml.cs">
+      <DependentUpon>AddOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AudioDefitions.xaml.cs">
       <DependentUpon>AudioDefitions.xaml</DependentUpon>
     </Compile>
@@ -138,6 +144,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="CaptchaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

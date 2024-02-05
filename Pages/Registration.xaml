@@ -36,7 +36,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="1" Grid.RowSpan="1">
             <TextBlock Text="Логин"></TextBlock>
-            <TextBox x:Name="TBLoginPage" HorizontalAlignment="Right"></TextBox>
+            <TextBox x:Name="TBLoginPage"  HorizontalAlignment="Right"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="2" Grid.RowSpan="1">
             <TextBlock Text="Пароль"></TextBlock>

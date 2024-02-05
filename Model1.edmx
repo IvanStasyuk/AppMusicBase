@@ -32,6 +32,21 @@
           <Property Name="City" Type="nvarchar(max)" />
           <Property Name="NameAccountant" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="idOrder" />
+          </Key>
+          <Property Name="idOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOrder" Type="nvarchar(max)" />
+          <Property Name="NameSinger" Type="nvarchar(max)" />
+          <Property Name="FamiliaSinger" Type="nvarchar(max)" />
+          <Property Name="PatronymicSinger" Type="nvarchar(max)" />
+          <Property Name="Instrument" Type="nvarchar(max)" />
+          <Property Name="Profit" Type="money" />
+          <Property Name="CountCompositions" Type="int" />
+          <Property Name="DateStart" Type="date" />
+          <Property Name="DateEnd" Type="date" />
+        </EntityType>
         <EntityType Name="Producers">
           <Key>
             <PropertyRef Name="idProducer" />
@@ -171,6 +186,7 @@
           <EntitySet Name="Alboms" EntityType="Self.Alboms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Instruments" EntityType="Self.Instruments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MusicStudios" EntityType="Self.MusicStudios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producers" EntityType="Self.Producers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Singers" EntityType="Self.Singers" Schema="dbo" store:Type="Tables" />
@@ -240,6 +256,7 @@
             <End Role="Tirage" EntitySet="Tirage" />
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
+          <EntitySet Name="Orders" EntityType="MusicStudioBaseModel.Orders" />
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -415,6 +432,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="idOrder" />
+          </Key>
+          <Property Name="idOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOrder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FamiliaSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PatronymicSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Instrument" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Profit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CountCompositions" Type="Int32" />
+          <Property Name="DateStart" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -517,6 +549,22 @@
                 <ScalarProperty Name="FamiliaUser" ColumnName="FamiliaUser" />
                 <ScalarProperty Name="NameUser" ColumnName="NameUser" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="CountCompositions" ColumnName="CountCompositions" />
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="Instrument" ColumnName="Instrument" />
+                <ScalarProperty Name="PatronymicSinger" ColumnName="PatronymicSinger" />
+                <ScalarProperty Name="FamiliaSinger" ColumnName="FamiliaSinger" />
+                <ScalarProperty Name="NameSinger" ColumnName="NameSinger" />
+                <ScalarProperty Name="NameOrder" ColumnName="NameOrder" />
+                <ScalarProperty Name="idOrder" ColumnName="idOrder" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

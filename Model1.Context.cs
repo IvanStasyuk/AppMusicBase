@@ -16,7 +16,6 @@ namespace AppMusicBase
     public partial class MusicStudioBaseEntities : DbContext
     {
         private static MusicStudioBaseEntities _context;
-
         public static MusicStudioBaseEntities GetContext()
         {
             if (_context == null)
@@ -43,5 +42,6 @@ namespace AppMusicBase
         public virtual DbSet<Singers> Singers { get; set; }
         public virtual DbSet<Tirage> Tirage { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
     }
 }

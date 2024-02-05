@@ -22,6 +22,7 @@ namespace AppMusicBase.Pages
     {
         public PeopleBox()
         {
+            DataContext = MusicStudioBaseEntities.GetContext().Users.ToList();
             InitializeComponent();
             var DataUser = MusicStudioBaseEntities.GetContext().Users.FirstOrDefault(x => x.NameUser == TBKnowName.Text && x.FamiliaUser == TBKnowFamilia.Text && x.PatronymicUser == TBKnowPatronymic.Text && x.Login == TBKnowLogin.Text && x.Password == TBKnowPassword.Text);
             

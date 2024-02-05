@@ -39,7 +39,7 @@ namespace AppMusicBase
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.NFrame.Navigate(new Pages.AddOrder());
         }
 
         private void PeopleboxButton_Click(object sender, RoutedEventArgs e)

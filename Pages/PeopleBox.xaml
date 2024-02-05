@@ -24,24 +24,24 @@
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="1" Margin="-30">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Имя:"></TextBlock>
-                <TextBox x:Name="TBKnowName" BorderBrush="Transparent" IsEnabled="False"></TextBox>
+                <TextBlock Text="Имя: "></TextBlock>
+                <TextBlock x:Name="TBKnowName" Text="{Binding NameUser}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
-                <TextBlock Text="Фамилия:"></TextBlock>
-                <TextBox x:Name="TBKnowFamilia" BorderBrush="Transparent" IsEnabled="False"></TextBox>
+                <TextBlock Text="Фамилия: "></TextBlock>
+                <TextBlock x:Name="TBKnowFamilia" Text="{Binding FamiliaUser}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Отчество:"></TextBlock>
-                <TextBox x:Name="TBKnowPatronymic" BorderBrush="Transparent" IsEnabled="False"></TextBox>
+                <TextBlock Text="Отчество: "></TextBlock>
+                <TextBlock x:Name="TBKnowPatronymic" Text="{Binding PatronymicUser}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
-                <TextBlock Text="Логин:"></TextBlock>
-                <TextBox x:Name="TBKnowLogin" BorderBrush="Transparent" IsEnabled="False"></TextBox>
+                <TextBlock Text="Логин: "></TextBlock>
+                <TextBlock x:Name="TBKnowLogin" Text="{Binding Login}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Пароль:"></TextBlock>
-                <TextBox x:Name="TBKnowPassword" BorderBrush="Transparent" IsEnabled="False"></TextBox>
+                <TextBlock Text="Пароль: "></TextBlock>
+                <TextBlock x:Name="TBKnowPassword" Text="{Binding Password}"></TextBlock>
             </StackPanel>
         </StackPanel>
         <Button x:Name="ExitButton" Content="Выйти из аккаунта" Style="{StaticResource ButtonAdd}" Grid.Row="2" Click="ExitButton_Click" Grid.ColumnSpan="3" Margin="0,55,0,0" VerticalAlignment="Top"/>
