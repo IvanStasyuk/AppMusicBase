@@ -34,6 +34,9 @@ namespace AppMusicBase.Pages
                 case "Красный":
                     this.Background = Brushes.Red;
                     break;
+                case "Белый":
+                    this.Background = Brushes.White;
+                    break;
             }
         }
     }
