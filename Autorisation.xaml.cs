@@ -28,6 +28,9 @@ namespace AppMusicBase
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
+            var LoginUser = MusicStudioBaseEntities.GetContext().Users.FirstOrDefault(y => y.Login == TBlogin.Text);
+            var PasswordUser = MusicStudioBaseEntities.GetContext().Users.FirstOrDefault(z => z.Password == TBPassword.Text);
+
             try
             {
                 StringBuilder errors = new StringBuilder();
@@ -41,20 +44,26 @@ namespace AppMusicBase
                     MessageBox.Show(errors.ToString());
                     return;
                 }
+
                 var UserVhod = MusicStudioBaseEntities.GetContext().Users.FirstOrDefault(x => x.Login == TBlogin.Text && x.Password == TBPassword.Text);
-                if (UserVhod == null)
+                if (LoginUser == null)
                 {
-                    MessageBox.Show("Такого пользователя нет!", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Логин введен с ошибками", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-                if (UserVhod.Login != "" && UserVhod.Password != "")
+                else if (PasswordUser == null)
                 {
-                    MessageBox.Show("Логин или пароль введён с ошибками", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Пароль введен с ошибками", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 if (CaptchaInput.Text == "")
                 {
                     MessageBox.Show("Введите капчу", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                if (CaptchaInput.Text != "ABCD")
+                {
+                    MessageBox.Show("Капча введена неверно", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 else if (CaptchaInput.Text == "ABCD")
