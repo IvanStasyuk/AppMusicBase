@@ -23,19 +23,31 @@ namespace AppMusicBase.Pages
         public Settings()
         {
             InitializeComponent();
+            List<string> items = new List<string> { "Красный", "Синий", "Зелёный", "Жёлтый", "Коричневый", "По умолчанию" };
+            SelectBackground.ItemsSource = items;
         }
 
         private void SelectBackground_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem selectedItems = (ComboBoxItem)SelectBackground.SelectedItem;
-            string selectedColor = selectedItems.Content.ToString();
-            switch (selectedColor)
+            switch (SelectBackground.SelectedValue.ToString())
             {
                 case "Красный":
-                    this.Background = Brushes.Red;
+                    Manager.MainGrid.Background = Brushes.Red;
                     break;
-                case "Белый":
-                    this.Background = Brushes.White;
+                case "Синий":
+                    Manager.MainGrid.Background = Brushes.Blue;
+                    break;
+                case "Зелёный":
+                    Manager.MainGrid.Background = Brushes.Green;
+                    break;
+                case "Жёлтый":
+                    Manager.MainGrid.Background = Brushes.Yellow;
+                    break;
+                case "Коричневый":
+                    Manager.MainGrid.Background = Brushes.Brown;
+                    break;
+                case "По умолчанию":
+                    Manager.MainGrid.Background = Brushes.LightGray;
                     break;
             }
         }

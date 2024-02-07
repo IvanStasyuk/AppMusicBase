@@ -14,5 +14,7 @@ namespace AppMusicBase
         static public Frame QFrame;
 
         static public Frame NFrame;
+
+        static public Grid MainGrid;
     }
 }

@@ -10,18 +10,18 @@
         <EntityTypeShape EntityType="MusicStudioBaseModel.Instruments" Width="1.5" PointX="3" PointY="8.5" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.MusicStudios" Width="1.5" PointX="0.75" PointY="1.625" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Producers" Width="1.5" PointX="3" PointY="1.375" />
-        <EntityTypeShape EntityType="MusicStudioBaseModel.Roles" Width="1.5" PointX="5.75" PointY="6.375" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Singers" Width="1.5" PointX="5.25" PointY="1" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Tirage" Width="1.5" PointX="3" PointY="5.625" />
-        <EntityTypeShape EntityType="MusicStudioBaseModel.Users" Width="1.5" PointX="8" PointY="6" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Alboms_Singers" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Таблица1" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Producers_MusicStudios1" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Producers" />
-        <AssociationConnector Association="MusicStudioBaseModel.FK_Users_Roles" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Tirage" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Orders" Width="1.5" PointX="7.375" PointY="9.75" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Orders" />
+        <EntityTypeShape EntityType="MusicStudioBaseModel.Roles" Width="1.5" PointX="5.375" PointY="6.375" />
+        <EntityTypeShape EntityType="MusicStudioBaseModel.Users" Width="1.5" PointX="7.625" PointY="6" />
+        <AssociationConnector Association="MusicStudioBaseModel.FK_Users_Roles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

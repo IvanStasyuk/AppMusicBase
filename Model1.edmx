@@ -103,7 +103,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="NameUser" Type="nvarchar" MaxLength="100" />
           <Property Name="FamiliaUser" Type="nvarchar" MaxLength="100" />
           <Property Name="PatronymicUser" Type="nvarchar" MaxLength="100" />
@@ -245,10 +245,8 @@
           <EntitySet Name="Instruments" EntityType="MusicStudioBaseModel.Instruments" />
           <EntitySet Name="MusicStudios" EntityType="MusicStudioBaseModel.MusicStudios" />
           <EntitySet Name="Producers" EntityType="MusicStudioBaseModel.Producers" />
-          <EntitySet Name="Roles" EntityType="MusicStudioBaseModel.Roles" />
           <EntitySet Name="Singers" EntityType="MusicStudioBaseModel.Singers" />
           <EntitySet Name="Tirage" EntityType="MusicStudioBaseModel.Tirage" />
-          <EntitySet Name="Users" EntityType="MusicStudioBaseModel.Users" />
           <AssociationSet Name="FK_Alboms_Singers" Association="MusicStudioBaseModel.FK_Alboms_Singers">
             <End Role="Singers" EntitySet="Singers" />
             <End Role="Alboms" EntitySet="Alboms" />
@@ -265,10 +263,6 @@
             <End Role="Producers" EntitySet="Producers" />
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Users_Roles" Association="MusicStudioBaseModel.FK_Users_Roles">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
           <AssociationSet Name="FK_Singers_Tirage" Association="MusicStudioBaseModel.FK_Singers_Tirage">
             <End Role="Tirage" EntitySet="Tirage" />
             <End Role="Singers" EntitySet="Singers" />
@@ -277,6 +271,12 @@
           <AssociationSet Name="FK_Singers_Orders" Association="MusicStudioBaseModel.FK_Singers_Orders">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="Singers" EntitySet="Singers" />
+          </AssociationSet>
+          <EntitySet Name="Roles" EntityType="MusicStudioBaseModel.Roles" />
+          <EntitySet Name="Users" EntityType="MusicStudioBaseModel.Users" />
+          <AssociationSet Name="FK_Users_Roles" Association="MusicStudioBaseModel.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
@@ -332,14 +332,6 @@
           <NavigationProperty Name="MusicStudios" Relationship="MusicStudioBaseModel.FK_Producers_MusicStudios1" FromRole="Producers" ToRole="MusicStudios" />
           <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Producers" FromRole="Producers" ToRole="Singers" />
         </EntityType>
-        <EntityType Name="Roles">
-          <Key>
-            <PropertyRef Name="idRole" />
-          </Key>
-          <Property Name="idRole" Type="Int32" Nullable="false" />
-          <Property Name="NameRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Users" Relationship="MusicStudioBaseModel.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
-        </EntityType>
         <EntityType Name="Singers">
           <Key>
             <PropertyRef Name="idSinger" />
@@ -369,19 +361,6 @@
           <Property Name="TimeEnd" Type="DateTime" Precision="0" />
           <Property Name="Profit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Tirage" FromRole="Tirage" ToRole="Singers" />
-        </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="NameUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="FamiliaUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="PatronymicUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="idRole" Type="Int32" />
-          <NavigationProperty Name="Roles" Relationship="MusicStudioBaseModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
         <Association Name="FK_Alboms_Singers">
           <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="0..1" />
@@ -431,18 +410,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Users_Roles">
-          <End Type="MusicStudioBaseModel.Roles" Role="Roles" Multiplicity="0..1" />
-          <End Type="MusicStudioBaseModel.Users" Role="Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="idRole" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="idRole" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Singers_Tirage">
           <End Type="MusicStudioBaseModel.Tirage" Role="Tirage" Multiplicity="1" />
           <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="*" />
@@ -480,6 +447,39 @@
             </Principal>
             <Dependent Role="Singers">
               <PropertyRef Name="idOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="idRole" />
+          </Key>
+          <Property Name="idRole" Type="Int32" Nullable="false" />
+          <Property Name="NameRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="MusicStudioBaseModel.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="NameUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FamiliaUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PatronymicUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idRole" Type="Int32" />
+          <NavigationProperty Name="Roles" Relationship="MusicStudioBaseModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+        </EntityType>
+        <Association Name="FK_Users_Roles">
+          <End Type="MusicStudioBaseModel.Roles" Role="Roles" Multiplicity="0..1" />
+          <End Type="MusicStudioBaseModel.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="idRole" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="idRole" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -542,14 +542,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Roles">
-              <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
-                <ScalarProperty Name="idRole" ColumnName="idRole" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Singers">
             <EntityTypeMapping TypeName="MusicStudioBaseModel.Singers">
               <MappingFragment StoreEntitySet="Singers">
@@ -576,19 +568,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Users">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="idRole" ColumnName="idRole" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="PatronymicUser" ColumnName="PatronymicUser" />
-                <ScalarProperty Name="FamiliaUser" ColumnName="FamiliaUser" />
-                <ScalarProperty Name="NameUser" ColumnName="NameUser" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="MusicStudioBaseModel.Orders">
               <MappingFragment StoreEntitySet="Orders">
@@ -602,6 +581,27 @@
                 <ScalarProperty Name="NameSinger" ColumnName="NameSinger" />
                 <ScalarProperty Name="NameOrder" ColumnName="NameOrder" />
                 <ScalarProperty Name="idOrder" ColumnName="idOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
+                <ScalarProperty Name="idRole" ColumnName="idRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="idRole" ColumnName="idRole" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="PatronymicUser" ColumnName="PatronymicUser" />
+                <ScalarProperty Name="FamiliaUser" ColumnName="FamiliaUser" />
+                <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

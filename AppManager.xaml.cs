@@ -28,6 +28,7 @@ namespace AppMusicBase
             InitializeComponent();
             Manager.QFrame = QFrame;
             Manager.NFrame = NFrame;
+            Manager.MainGrid = MainGrid;
             Manager.NFrame.Navigate(new Pages.AudioDefitions());
         }
 

@@ -56,11 +56,11 @@ namespace AppMusicBase.Pages
             {
                 Users UserReg = new Users()
                 {
-                    Login = TBLoginPage.Text,
-                    Password = TBPasswordPage.Text,
                     NameUser = TBNamePage.Text,
                     FamiliaUser = TBFamiliaPage.Text,
                     PatronymicUser = TBPatronymicPage.Text,
+                    Login = TBLoginPage.Text,
+                    Password = TBPasswordPage.Text,
                     idRole = int.Parse(TBRolePage.Text)
                 };
                 MusicStudioBaseEntities.GetContext().Users.Add(UserReg);
