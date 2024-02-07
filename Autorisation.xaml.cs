@@ -30,10 +30,26 @@ namespace AppMusicBase
         {
             try
             {
+                StringBuilder errors = new StringBuilder();
+
+                if (string.IsNullOrEmpty(TBlogin.Text))
+                    errors.AppendLine("Укажите логин");
+                if (string.IsNullOrEmpty(TBPassword.Text))
+                    errors.AppendLine("Укажите пароль");
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
                 var UserVhod = MusicStudioBaseEntities.GetContext().Users.FirstOrDefault(x => x.Login == TBlogin.Text && x.Password == TBPassword.Text);
                 if (UserVhod == null)
                 {
                     MessageBox.Show("Такого пользователя нет!", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                if (UserVhod.Login != "" && UserVhod.Password != "")
+                {
+                    MessageBox.Show("Логин или пароль введён с ошибками", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 if (CaptchaInput.Text == "")
@@ -44,7 +60,6 @@ namespace AppMusicBase
                 else if (CaptchaInput.Text == "ABCD")
                 {
                     MessageBox.Show("Капча верна", "Авторизация успешна", MessageBoxButton.OK, MessageBoxImage.Information);
-
                     switch (UserVhod.idRole)
                     {
                         case 1:
