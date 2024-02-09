@@ -271,6 +271,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\blueWallpaper.jfif" />
+    <Content Include="Resources\greenWallpaper.jfif" />
+    <Content Include="Resources\grownWallpaper.jfif" />
+    <Resource Include="Resources\redWallpaper.jfif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\yellowWallpaper.jfif" />
     <Resource Include="Resources\peopleUser.png" />
     <Resource Include="Resources\unknownAlbom.png" />
     <Resource Include="Resources\audioDef.jpg" />
