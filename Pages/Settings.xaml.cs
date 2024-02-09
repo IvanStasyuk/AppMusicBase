@@ -32,32 +32,34 @@ namespace AppMusicBase.Pages
             switch (SelectBackground.SelectedValue.ToString())
             {
                 case "Красный":
-                    var uri = new Uri("pack://application:,,,/Resources/redWallpaper.jfif");
+                    var uri = new Uri("pack://application:,,,/Resources/redWallpaper.png");
                     var bitmap = new BitmapImage(uri);
                     Manager.MainGrid.Background = new ImageBrush(bitmap);
                     break;
                 case "Синий":
-                    var uri2 = new Uri("pack://application:,,,/Resources/blueWallpaper.jfif");
+                    var uri2 = new Uri("pack://application:,,,/Resources/blueWallpaper.png");
                     var bitmapTwo = new BitmapImage(uri2);
                     Manager.MainGrid.Background = new ImageBrush(bitmapTwo);
                     break;
                 case "Зелёный":
-                    var uri3 = new Uri("pack://application:,,,/Resources/greenWallpaper.jfif");
+                    var uri3 = new Uri("pack://application:,,,/Resources/greenWallpaper.png");
                     var bitmapThree = new BitmapImage(uri3);
                     Manager.MainGrid.Background = new ImageBrush(bitmapThree);
                     break;
                 case "Жёлтый":
-                    var uri4 = new Uri("pack://application:,,,/Resources/yellowWallpaper.jfif");
+                    var uri4 = new Uri("pack://application:,,,/Resources/yellowWallpaper.png");
                     var bitmapFour = new BitmapImage(uri4);
                     Manager.MainGrid.Background = new ImageBrush(bitmapFour);
                     break;
                 case "Коричневый":
-                    var uri5 = new Uri("pack://application:,,,/Resources/brownWallpaper.jfif");
+                    var uri5 = new Uri("pack://application:,,,/Resources/grownWallpaper.png");
                     var bitmapFive = new BitmapImage(uri5);
                     Manager.MainGrid.Background = new ImageBrush(bitmapFive);
                     break;
                 case "По умолчанию":
-                    Manager.MainGrid.Background = Brushes.LightGray;
+                    var uriMain = new Uri("pack://application:,,,/Resources/imagestudio.png");
+                    var bitmapMain = new BitmapImage(uriMain);
+                    Manager.MainGrid.Background = new ImageBrush(bitmapMain);
                     break;
             }
         }

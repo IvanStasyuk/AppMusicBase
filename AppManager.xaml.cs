@@ -26,6 +26,9 @@ namespace AppMusicBase
         public AppManager()
         {
             InitializeComponent();
+            var uriMain = new Uri("pack://application:,,,/Resources/imagestudio.png");
+            var bitmapMain = new BitmapImage(uriMain);
+            MainGrid.Background = new ImageBrush(bitmapMain);
             Manager.QFrame = QFrame;
             Manager.NFrame = NFrame;
             Manager.MainGrid = MainGrid;
@@ -119,6 +122,13 @@ namespace AppMusicBase
         private void InstrumentsButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.QFrame.Navigate(new Pages.MusicInstruments());
+        }
+
+        private void BackWindow_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window5 = new MainWindow();
+            window5.Show();
+            this.Close();
         }
     }
 }

@@ -246,21 +246,6 @@
     <Resource Include="Resources\studio.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\peoplebox.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\peoplefileopen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\peoplefilesave.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\peoplefileexport.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\peoplefilesettings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -271,13 +256,17 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Resources\blueWallpaper.jfif" />
-    <Content Include="Resources\greenWallpaper.jfif" />
-    <Content Include="Resources\grownWallpaper.jfif" />
-    <Resource Include="Resources\redWallpaper.jfif">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="Resources\yellowWallpaper.jfif" />
+    <Resource Include="Resources\imagestudio.png" />
+    <Resource Include="Resources\peoplefilesettings.png" />
+    <Resource Include="Resources\peoplefileexport.png" />
+    <Resource Include="Resources\peoplefilesave.png" />
+    <Resource Include="Resources\peoplefileopen.png" />
+    <Resource Include="Resources\peoplebox.png" />
+    <Resource Include="Resources\blueWallpaper.png" />
+    <Resource Include="Resources\greenWallpaper.png" />
+    <Resource Include="Resources\grownWallpaper.png" />
+    <Resource Include="Resources\redWallpaper.png" />
+    <Resource Include="Resources\yellowWallpaper.png" />
     <Resource Include="Resources\peopleUser.png" />
     <Resource Include="Resources\unknownAlbom.png" />
     <Resource Include="Resources\audioDef.jpg" />

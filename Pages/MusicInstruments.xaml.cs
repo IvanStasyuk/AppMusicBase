@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,21 @@ namespace AppMusicBase.Pages
         public MusicInstruments()
         {
             InitializeComponent();
+            ObservableCollection<string> data = new ObservableCollection<string>
+            {
+                "Названия инструментов", "",
+                "Гитара",
+                "Фортепиано",
+                "Скрипка",
+                "Саксофон",
+                "Барабаны",
+                "Барабаны",
+                "Труба",
+                "Клавишные",
+                "Голос",
+                "Бас-гитара",
+            };
+            MyListIntruments.ItemsSource = data;
         }
     }
 }

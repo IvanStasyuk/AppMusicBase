@@ -20,16 +20,8 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.ColumnSpan="3" Grid.RowSpan="3">
-            <Button Content=" - Дилей" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Реверберация" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Фленжер" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Эхо" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Хорус" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Компрессия" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Дисторшн" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Эквализация" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Фазовращение" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Вокодер" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
+            <ListBox x:Name="MyListEffects" Height="350" Width="300">
+            </ListBox>
         </StackPanel>
     </Grid>
 </Page>

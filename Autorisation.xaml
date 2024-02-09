@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AppMusicBase"
         mc:Ignorable="d"
         Title="Студия звукозаписи MusicBase" Height="720" Width="1280">
-    <Grid Background="LightGray">
+    <Grid x:Name="GridAutorisation" Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>

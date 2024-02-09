@@ -20,16 +20,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.ColumnSpan="3" Grid.RowSpan="3">
-            <Button Content=" - Гитара" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Фортепиано" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Скрипка" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Саксофон" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Барабаны" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Флейта" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Труба" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Клавишные" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Голос" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Бас-гитара" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
+            <ListBox x:Name="MyListIntruments" Height="350" Width="300"></ListBox>
         </StackPanel>
     </Grid>
 </Page>

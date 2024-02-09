@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,21 @@ namespace AppMusicBase.Pages
         public Elections()
         {
             InitializeComponent();
+            ObservableCollection<string> data = new ObservableCollection<string>
+            {
+                "Названия жанров", "",
+                "Поп",
+                "Рок",
+                "Металл",
+                "Кантри",
+                "Блюз",
+                "Электронная",
+                "Классическая",
+                "Фанк",
+                "Хаус",
+                "Соул",
+            };
+            MyListElections.ItemsSource = data;
         }
     }
 }

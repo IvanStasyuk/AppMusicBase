@@ -23,6 +23,9 @@ namespace AppMusicBase
         public MainWindow()
         {
             InitializeComponent();
+            var uriMain = new Uri("pack://application:,,,/Resources/imagestudio.png");
+            var bitmapMain = new BitmapImage(uriMain);
+            GridAutorisation.Background = new ImageBrush(bitmapMain);
             Manager.MFrame = MFrame;
         }
 

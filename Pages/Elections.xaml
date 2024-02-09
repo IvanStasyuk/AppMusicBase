@@ -20,16 +20,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.ColumnSpan="3" Grid.RowSpan="3">
-            <Button Content=" - Поп" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Рок" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Металл" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Кантри" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Блюз" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Электронная" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Классическая" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Фанк" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Хаус" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
-            <Button Content=" - Соул" Margin="4" Style="{StaticResource ButtonAdd}"></Button>
+            <ListBox x:Name="MyListElections" Height="350" Width="300"></ListBox>
         </StackPanel>
     </Grid>
 </Page>
