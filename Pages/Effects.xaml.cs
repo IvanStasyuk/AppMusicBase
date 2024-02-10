@@ -36,7 +36,7 @@ namespace AppMusicBase.Pages
                 "Дисторшн",
                 "Эквализация",
                 "Фазовращение",
-                "Вокодер",
+                "Вокодер"
             };
             MyListEffects.ItemsSource = data;
         }
