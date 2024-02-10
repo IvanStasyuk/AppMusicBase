@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static AppMusicBase.Manager;
 
 namespace AppMusicBase.Pages
 {
@@ -24,21 +26,21 @@ namespace AppMusicBase.Pages
         public Effects()
         {
             InitializeComponent();
-            ObservableCollection<string> data = new ObservableCollection<string>
+            ObservableCollection<string> Effects = new ObservableCollection<string>
             {
-                "Названия эффектов", "",
-                "Дилей",
-                "Реверберация",
-                "Фленжер",
-                "Эхо",
-                "Хорус",
-                "Компрессия",
-                "Дисторшн",
-                "Эквализация",
-                "Фазовращение",
-                "Вокодер"
+                "Названия эффектов", "--------------------------------------",
+                "Дилей (2500р)",
+                "Реверберация (3000р)",
+                "Фленжер (1700р)",
+                "Эхо (2300р)",
+                "Хорус (4100р)",
+                "Компрессия (1800р)",
+                "Дисторшн (800р)",
+                "Эквализация (2900р)",
+                "Фазовращение (3500р)",
+                "Вокодер (1500р)",
             };
-            MyListEffects.ItemsSource = data;
+            MyListEffects.ItemsSource = Effects;
         }
     }
 }

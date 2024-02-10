@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7ff1a95e85634839be05048372fda657" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="MusicStudioBaseModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="9.75" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Alboms" Width="1.5" PointX="7.5" PointY="1.5" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Instruments" Width="1.5" PointX="3" PointY="8.5" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.MusicStudios" Width="1.5" PointX="0.75" PointY="1.625" />

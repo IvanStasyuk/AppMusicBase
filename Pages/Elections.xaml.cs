@@ -24,21 +24,21 @@ namespace AppMusicBase.Pages
         public Elections()
         {
             InitializeComponent();
-            ObservableCollection<string> data = new ObservableCollection<string>
+            ObservableCollection<string> Janrs = new ObservableCollection<string>
             {
-                "Названия жанров", "",
-                "Поп",
-                "Рок",
-                "Металл",
-                "Кантри",
-                "Блюз",
-                "Электронная",
-                "Классическая",
-                "Фанк",
-                "Хаус",
-                "Соул",
+                "Названия жанров", "--------------------------------------",
+                "Поп (5000р)",
+                "Рок (4500р)",
+                "Металл (3200р)",
+                "Кантри (1700р)",
+                "Блюз (900р)",
+                "Электронная (2600р)",
+                "Классическая (1000р)",
+                "Фанк (2100р)",
+                "Хаус (3400р)",
+                "Соул (1900р)",
             };
-            MyListElections.ItemsSource = data;
+            MyListElections.ItemsSource = Janrs;
         }
     }
 }

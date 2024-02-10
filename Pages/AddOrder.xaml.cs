@@ -29,10 +29,18 @@ namespace AppMusicBase.Pages
             TBJanrPage.ItemsSource = items2;
             List<string> items3 = new List<string> { "Дилей", "Реверберация", "Фленжер", "Эхо", "Хорус", "Компрессия", "Дисторшн", "Эквализация", "Фазовращение", "Вокодер" };
             TBEffectPage.ItemsSource = items3;
+
         }
 
         private void BTSaveOrder_Click(object sender, RoutedEventArgs e)
         {
+            Dictionary<string, int> instruments = new Dictionary<string, int>();
+            instruments["Гитара"] = 2500;
+            Dictionary<string, int> instruments2 = new Dictionary<string, int>();
+            instruments2["Фортепиано"] = 2500;
+            Dictionary<string, int> instruments3 = new Dictionary<string, int>();
+            instruments3["Скрипка"] = 2500;
+
             StringBuilder errors = new StringBuilder();
 
             if (string.IsNullOrEmpty(TBNameOrderPage.Text))
@@ -45,6 +53,10 @@ namespace AppMusicBase.Pages
                 errors.AppendLine("Укажите отчество исполнителя");
             if (string.IsNullOrEmpty(TBInstrumentPage.Text))
                 errors.AppendLine("Укажите инструмент исполнителя");
+            if (string.IsNullOrEmpty(TBJanrPage.Text))
+                errors.AppendLine("Укажите жанр композиции");
+            if (string.IsNullOrEmpty(TBEffectPage.Text))
+                errors.AppendLine("Укажите эффект композиции");
             if (string.IsNullOrEmpty(TBProfitPage.Text))
                 errors.AppendLine("Укажите цену услуги");
             if (string.IsNullOrEmpty(TBCountCompositionsPage.Text))
@@ -73,6 +85,8 @@ namespace AppMusicBase.Pages
                     FamiliaSinger = TBFamiliaSingerPage.Text,
                     PatronymicSinger = TBPatronymicSingerPage.Text,
                     Instrument = TBInstrumentPage.Text,
+                    Janr = TBJanrPage.Text,
+                    Effect = TBEffectPage.Text,
                     Profit = int.Parse(TBProfitPage.Text),
                     CountCompositions = int.Parse(TBCountCompositionsPage.Text),
                     DateStart = DateTime.Parse(TBStartOrderPage.Text),

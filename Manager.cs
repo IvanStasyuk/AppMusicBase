@@ -16,10 +16,5 @@ namespace AppMusicBase
         static public Frame NFrame;
 
         static public Grid MainGrid;
-
-        public class ListBox
-        {
-
-        }
     }
 }

@@ -16,6 +16,7 @@ namespace AppMusicBase
     public partial class MusicStudioBaseEntities : DbContext
     {
         private static MusicStudioBaseEntities _context;
+
         public static MusicStudioBaseEntities GetContext()
         {
             if (_context == null)
@@ -32,7 +33,6 @@ namespace AppMusicBase
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Alboms> Alboms { get; set; }
         public virtual DbSet<Instruments> Instruments { get; set; }
         public virtual DbSet<MusicStudios> MusicStudios { get; set; }

@@ -24,21 +24,21 @@ namespace AppMusicBase.Pages
         public MusicInstruments()
         {
             InitializeComponent();
-            ObservableCollection<string> data = new ObservableCollection<string>
+            ObservableCollection<string> Instruments = new ObservableCollection<string>
             {
-                "Названия инструментов", "",
-                "Гитара",
-                "Фортепиано",
-                "Скрипка",
-                "Саксофон",
-                "Флейта",
-                "Барабаны",
-                "Труба",
-                "Клавишные",
-                "Голос",
-                "Бас-гитара",
+                "Названия инструментов", "--------------------------------------",
+                "Гитара (1700р)",
+                "Фортепиано (2000р)",
+                "Скрипка (3400р)",
+                "Саксофон (700р)",
+                "Флейта (1500р)",
+                "Барабаны (2100р)",
+                "Труба (3100р)",
+                "Клавишные (3000р)",
+                "Голос (4000р)",
+                "Бас-гитара (2500р)",
             };
-            MyListIntruments.ItemsSource = data;
+            MyListIntruments.ItemsSource = Instruments;
         }
     }
 }
