@@ -23,6 +23,12 @@ namespace AppMusicBase.Pages
         public AddOrder()
         {
             InitializeComponent();
+            List<string> items = new List<string> { "Гитара", "Фортепиано", "Скрипка", "Саксофон", "Флейта", "Барабаны", "Труба", "Клавишные", "Голос", "Бас-гитара" };
+            TBInstrumentPage.ItemsSource = items;
+            List<string> items2 = new List<string> { "Поп", "Рок", "Металл", "Кантри", "Блюз", "Электронная", "Классическая", "Фанк", "Хаус", "Соул" };
+            TBJanrPage.ItemsSource = items2;
+            List<string> items3 = new List<string> { "Дилей", "Реверберация", "Фленжер", "Эхо", "Хорус", "Компрессия", "Дисторшн", "Эквализация", "Фазовращение", "Вокодер" };
+            TBEffectPage.ItemsSource = items3;
         }
 
         private void BTSaveOrder_Click(object sender, RoutedEventArgs e)

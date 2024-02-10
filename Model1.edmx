@@ -42,6 +42,8 @@
           <Property Name="FamiliaSinger" Type="nvarchar(max)" />
           <Property Name="PatronymicSinger" Type="nvarchar(max)" />
           <Property Name="Instrument" Type="nvarchar(max)" />
+          <Property Name="Janr" Type="nvarchar(max)" />
+          <Property Name="Effect" Type="nvarchar(max)" />
           <Property Name="Profit" Type="money" />
           <Property Name="CountCompositions" Type="int" />
           <Property Name="DateStart" Type="date" />
@@ -267,16 +269,16 @@
             <End Role="Tirage" EntitySet="Tirage" />
             <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
-          <EntitySet Name="Orders" EntityType="MusicStudioBaseModel.Orders" />
-          <AssociationSet Name="FK_Singers_Orders" Association="MusicStudioBaseModel.FK_Singers_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="Singers" EntitySet="Singers" />
-          </AssociationSet>
           <EntitySet Name="Roles" EntityType="MusicStudioBaseModel.Roles" />
           <EntitySet Name="Users" EntityType="MusicStudioBaseModel.Users" />
           <AssociationSet Name="FK_Users_Roles" Association="MusicStudioBaseModel.FK_Users_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Orders" EntityType="MusicStudioBaseModel.Orders" />
+          <AssociationSet Name="FK_Singers_Orders" Association="MusicStudioBaseModel.FK_Singers_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Singers" EntitySet="Singers" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
@@ -422,34 +424,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Orders">
-          <Key>
-            <PropertyRef Name="idOrder" />
-          </Key>
-          <Property Name="idOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameOrder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NameSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FamiliaSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PatronymicSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Instrument" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Profit" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="CountCompositions" Type="Int32" />
-          <Property Name="DateStart" Type="DateTime" Precision="0" />
-          <Property Name="DateEnd" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Orders" FromRole="Orders" ToRole="Singers" />
-        </EntityType>
-        <Association Name="FK_Singers_Orders">
-          <End Type="MusicStudioBaseModel.Orders" Role="Orders" Multiplicity="0..1" />
-          <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Orders">
-              <PropertyRef Name="idOrder" />
-            </Principal>
-            <Dependent Role="Singers">
-              <PropertyRef Name="idOrder" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Roles">
           <Key>
             <PropertyRef Name="idRole" />
@@ -480,6 +454,36 @@
             </Principal>
             <Dependent Role="Users">
               <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="idOrder" />
+          </Key>
+          <Property Name="idOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOrder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FamiliaSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PatronymicSinger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Instrument" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Janr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Effect" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Profit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CountCompositions" Type="Int32" />
+          <Property Name="DateStart" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Singers" Relationship="MusicStudioBaseModel.FK_Singers_Orders" FromRole="Orders" ToRole="Singers" />
+        </EntityType>
+        <Association Name="FK_Singers_Orders">
+          <End Type="MusicStudioBaseModel.Orders" Role="Orders" Multiplicity="0..1" />
+          <End Type="MusicStudioBaseModel.Singers" Role="Singers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="idOrder" />
+            </Principal>
+            <Dependent Role="Singers">
+              <PropertyRef Name="idOrder" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -568,22 +572,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="MusicStudioBaseModel.Orders">
-              <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
-                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
-                <ScalarProperty Name="CountCompositions" ColumnName="CountCompositions" />
-                <ScalarProperty Name="Profit" ColumnName="Profit" />
-                <ScalarProperty Name="Instrument" ColumnName="Instrument" />
-                <ScalarProperty Name="PatronymicSinger" ColumnName="PatronymicSinger" />
-                <ScalarProperty Name="FamiliaSinger" ColumnName="FamiliaSinger" />
-                <ScalarProperty Name="NameSinger" ColumnName="NameSinger" />
-                <ScalarProperty Name="NameOrder" ColumnName="NameOrder" />
-                <ScalarProperty Name="idOrder" ColumnName="idOrder" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="MusicStudioBaseModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
@@ -602,6 +590,24 @@
                 <ScalarProperty Name="FamiliaUser" ColumnName="FamiliaUser" />
                 <ScalarProperty Name="NameUser" ColumnName="NameUser" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="MusicStudioBaseModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="CountCompositions" ColumnName="CountCompositions" />
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="Effect" ColumnName="Effect" />
+                <ScalarProperty Name="Janr" ColumnName="Janr" />
+                <ScalarProperty Name="Instrument" ColumnName="Instrument" />
+                <ScalarProperty Name="PatronymicSinger" ColumnName="PatronymicSinger" />
+                <ScalarProperty Name="FamiliaSinger" ColumnName="FamiliaSinger" />
+                <ScalarProperty Name="NameSinger" ColumnName="NameSinger" />
+                <ScalarProperty Name="NameOrder" ColumnName="NameOrder" />
+                <ScalarProperty Name="idOrder" ColumnName="idOrder" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

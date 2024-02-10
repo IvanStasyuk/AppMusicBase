@@ -26,6 +26,8 @@
                 <DataGridTextColumn Header="Фамилия исполнителя" Width="auto" Binding="{Binding FamiliaSinger}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Отчество исполнителя" Width="auto" Binding="{Binding PatronymicSinger}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Инструмент" Width="auto" Binding="{Binding Instrument}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Жанр" Width="auto" Binding="{Binding Janr}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Эффект" Width="auto" Binding="{Binding Effect}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Цена заказа" Width="auto" Binding="{Binding Profit}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Количество композиций" Width="auto" Binding="{Binding CountCompositions}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Дата начало записи" Width="auto" Binding="{Binding DateStart}"></DataGridTextColumn>

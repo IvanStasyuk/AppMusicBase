@@ -26,6 +26,8 @@ namespace AppMusicBase
         public string FamiliaSinger { get; set; }
         public string PatronymicSinger { get; set; }
         public string Instrument { get; set; }
+        public string Janr { get; set; }
+        public string Effect { get; set; }
         public Nullable<decimal> Profit { get; set; }
         public Nullable<int> CountCompositions { get; set; }
         public Nullable<System.DateTime> DateStart { get; set; }

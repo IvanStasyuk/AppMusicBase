@@ -17,11 +17,11 @@
         <AssociationConnector Association="MusicStudioBaseModel.FK_Producers_MusicStudios1" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Producers" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Tirage" />
-        <EntityTypeShape EntityType="MusicStudioBaseModel.Orders" Width="1.5" PointX="7.375" PointY="9.75" />
-        <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Orders" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Roles" Width="1.5" PointX="5.375" PointY="6.375" />
         <EntityTypeShape EntityType="MusicStudioBaseModel.Users" Width="1.5" PointX="7.625" PointY="6" />
         <AssociationConnector Association="MusicStudioBaseModel.FK_Users_Roles" />
+        <EntityTypeShape EntityType="MusicStudioBaseModel.Orders" Width="1.5" PointX="7.375" PointY="10" />
+        <AssociationConnector Association="MusicStudioBaseModel.FK_Singers_Orders" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
