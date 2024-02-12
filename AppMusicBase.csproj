@@ -241,9 +241,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\studio.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -254,6 +251,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\studio.png" />
     <Resource Include="Resources\imagestudio.png" />
     <Resource Include="Resources\peoplefilesettings.png" />
     <Resource Include="Resources\peoplefileexport.png" />
