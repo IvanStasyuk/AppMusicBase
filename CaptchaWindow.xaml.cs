@@ -33,7 +33,7 @@ namespace AppMusicBase
             }
             else
             {
-                MessageBox.Show("Капча верна!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Капча верна!", "Капча", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
                 Manager.NFrame.Navigate(new Pages.PeopleBox());
             }
